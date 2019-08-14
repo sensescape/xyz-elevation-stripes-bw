@@ -34,7 +34,7 @@ sources:
     #     tile_size: 512
     #     max_zoom: 16
 
-    nextzen:
+    mapzen:
         type: MVT
         url: https://tile.nextzen.org/tilezen/vector/v1/512/all/{z}/{x}/{y}.mvt
         url_params:
@@ -56,7 +56,7 @@ sources:
 
 layers:
     earth:
-        data: { source: nextzen, layer: earth }
+        data: { source: mapzen, layer: earth }
         draw:
             polygons:
                 style: elevation-stripes
@@ -64,7 +64,7 @@ layers:
                 color: [0.300,0.300,0.300] #color of stripes
 
     landuse:
-        data: { source: nextzen }
+        data: { source: mapzen }
         draw:
             polygons:
                 style: elevation-stripes
@@ -72,7 +72,7 @@ layers:
                 color: [0.250,0.250,0.250]
 
     water:
-        data: { source: nextzen, layer: water }
+        data: { source: mapzen, layer: water }
         draw:
             polygons:
                 order: global.feature_order
@@ -90,7 +90,7 @@ layers:
                     color: [0.750,0.750,0.750]
 
     # roads:
-    #     data: { source: nextzen, layer: roads }
+    #     data: { source: mapzen, layer: roads }
     #     draw:
     #         lines:
     #             width: 1px
@@ -347,7 +347,7 @@ layers:
     #                 width: 1px
 
     buildings:
-        data: { source: nextzen, layer: buildings }
+        data: { source: mapzen, layer: buildings }
         filter:
             not: { location: underground }
             any:
